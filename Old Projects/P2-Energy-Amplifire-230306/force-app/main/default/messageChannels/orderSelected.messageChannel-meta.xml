@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>selected Order</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>The id of the account of the order being searched.</description>
+        <fieldName>orderIdField</fieldName>
+    </lightningMessageFields>
+    <masterLabel>orderSelected</masterLabel>
+</LightningMessageChannel>

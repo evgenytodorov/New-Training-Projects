@@ -1,0 +1,103 @@
+<template>
+    <div>
+        <img src={logo} style="display:block; margin:auto; width:15%"/>
+        <lightning-layout horizontal-align="center" vertical-align="center">
+            <lightning-layout-item>
+                <lightning-button-group style="--slds-c-button-stateful-color-background-selected: #dddddd">
+                    <lightning-button-stateful label-when-off="Accounts" label-when-on="Accounts" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleAcc} selected={displayAcc}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Leads" label-when-on="Leads" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleLea} selected={displayLea}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Opportunities" label-when-on="Opportunities" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleOpp} selected={displayOpp}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Orders and Products" label-when-on="Orders and Products" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleOrd} selected={displayOrd}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Customers" label-when-on="Customers" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleCus} selected={displayCus}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Technicians" label-when-on="Technicians" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleTec} selected={displayTec}></lightning-button-stateful>
+                    <lightning-button-stateful label-when-off="Work Orders" label-when-on="Work Orders" icon-name-when-off="utility:add" 
+                                                    icon-name-when-on="utility:check" onclick={handleWO} selected={displayWO}></lightning-button-stateful>
+                </lightning-button-group>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+    <!-- Accounts -->
+
+    <lightning-layout if:true={displayAcc}>
+        <lightning-layout-item size="3" padding="around-small">
+                <c-account-search></c-account-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+                <c-account-list></c-account-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Leads -->
+
+    <lightning-layout if:true={displayLea}>
+        <lightning-layout-item size="3" padding="around-small">
+            <c-lead-search></c-lead-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-lead-list></c-lead-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Opportunities -->
+
+    <lightning-layout if:true={displayOpp}>
+        <lightning-layout-item size="3" padding="around-small">
+            <c-opportunity-search></c-opportunity-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-opportunity-list></c-opportunity-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Orders -->
+
+    <lightning-layout if:true={displayOrd}>
+        <lightning-layout-item size="3" padding="around-small">
+                <c-order-search></c-order-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+                <c-order-list onprodreset={handleProdReset}></c-order-list>
+                <c-product-list if:true={displayProd}></c-product-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Customers -->
+
+    <lightning-layout if:true={displayCus}>
+        <lightning-layout-item size="3" padding="around-small">
+            <c-customer-search></c-customer-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-customer-list></c-customer-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Technicians -->
+
+    <lightning-layout if:true={displayTec}>
+        <lightning-layout-item size="3" padding="around-small">
+            <c-tech-search></c-tech-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-tech-list></c-tech-list>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Work Orders -->
+
+    <lightning-layout if:true={displayWO}>
+        <lightning-layout-item size="3" padding="around-small">
+            <c-work-order-search></c-work-order-search>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <c-work-order-list></c-work-order-list>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

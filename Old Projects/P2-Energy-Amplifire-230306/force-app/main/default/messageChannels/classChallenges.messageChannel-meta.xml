@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>classChallengesChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Lightning Message Channel for class challenges.</description>
+    <lightningMessageFields>
+        <fieldName>caseNumberField</fieldName>
+        <description>Case number of case searched for.</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>subjectField</fieldName>
+        <description>Subject of case searched for.</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>descriptionField</fieldName>
+        <description>Description of case searched for.</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>statusField</fieldName>
+        <description>Status of case searched for.</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>descriptionField</fieldName>
+        <description>Description of case searched for.</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>createdDateField</fieldName>
+        <description>Created date of case searched for.</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

@@ -1,0 +1,6 @@
+<template>
+    <template lwc:if={casesList}>
+        <lightning-datatable key-field="Id" data={casesList} columns={columns}></lightning-datatable>
+    </template>
+    <lightning-record-form object-api-name="Case" layout-type="Full" onsuccess={handleSuccess}></lightning-record-form>
+</template>

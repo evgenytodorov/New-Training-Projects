@@ -1,0 +1,14 @@
+Things to add to pages:
+
+picklists
+lookup relationships
+Icons for the Objects
+Pagination
+LWC for the Header instead of this Janky thing
+
+Maybes:
+Sort functions based on columns
+
+Partially Implemented:
+Pausing on change (debouncing?)
+refreshApex on creation of new records
