@@ -1,14 +1,11 @@
 import { LightningElement, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import isGuest from '@salesforce/user/isGuest';
-import logo from '@salesforce/resourceUrl/logo'; 
 
 export default class Navigation extends NavigationMixin(LightningElement) {
   isGuest = false; // Update this based on your logic
   isLoggedIn = !isGuest;
-  get logoUrl() {
-    return logo;
-  }
+
   navigateToHome(event) {
     event.preventDefault();
     this[NavigationMixin.Navigate]({
