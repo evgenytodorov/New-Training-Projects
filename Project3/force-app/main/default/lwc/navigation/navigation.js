@@ -1,54 +1,36 @@
 import { LightningElement, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
-import isGuest from '@salesforce/user/isGuest';
+import isGuest from '@salesforce/user/isGuest'; 
+import logo from '@salesforce/resourceUrl/logo'; 
 
 export default class Navigation extends NavigationMixin(LightningElement) {
-  isGuest = false; // Update this based on your logic
-  isLoggedIn = !isGuest;
+  @track isGuest = isGuest;
+  @track isLoggedIn = !isGuest;
+
+  logoUrl = logo;
 
   navigateToHome(event) {
     event.preventDefault();
-    this[NavigationMixin.Navigate]({
-      type: 'standard__namedPage',
-      attributes: {
-        pageName: 'home'
-      }
-    });
+    window.location.href = '/bytepropertymanagement';
   }
 
   navigateToTourSignUp(event) {
     event.preventDefault();
-    this[NavigationMixin.Navigate]({
-      type: 'standard__namedPage',
-      attributes: {
-        pageName: 'tour'
-      }
-    });
+    window.location.href = '/bytepropertymanagement/tours';
   }
 
   navigateToSignUp(event) {
     event.preventDefault();
-    this[NavigationMixin.Navigate]({
-      type: 'standard__namedPage',
-      attributes: {
-        pageName: 'signup'
-      }
-    });
+    window.location.href = '/bytepropertymanagement/SelfRegister';
   }
 
   navigateToLogin(event) {
     event.preventDefault();
-    this[NavigationMixin.Navigate]({
-      type: 'standard__namedPage',
-      attributes: {
-        pageName: 'login'
-      }
-    });
+    window.location.href = '/bytepropertymanagement/login';
   }
 
   handleLogout(event) {
     event.preventDefault();
-    // Implement logout logic here, such as redirecting to a logout URL
     window.location.href = '/secur/logout.jsp';
   }
 }
