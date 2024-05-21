@@ -11,5 +11,12 @@
         <name>CustomTab</name>
     </types>
     
+    <types>
+        <members>dataform</members>
+        <members>loginForm</members>
+        <members>navigation</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
     <version>60.0</version>
 </Package>
