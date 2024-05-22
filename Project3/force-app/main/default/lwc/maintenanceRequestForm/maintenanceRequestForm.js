@@ -3,6 +3,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import submitMaintenanceRequest from '@salesforce/apex/MaintenanceRequestController.submitMaintenanceRequest';
 import { getRecord } from 'lightning/uiRecordApi';
 import USER_ID from '@salesforce/user/Id';
+import isGuest from '@salesforce/user/isGuest';
 
 const FIELDS = ['User.ContactId'];
 
@@ -13,12 +14,21 @@ export default class MaintenanceRequestForm extends LightningElement {
     @track contactId;
     @track isFormVisible = true;
     @track isConfirmationVisible = false;
+    isGuest = isGuest;
 
     priorityOptions = [
         { label: 'Low', value: 'Low' },
         { label: 'Medium', value: 'Medium' },
         { label: 'High', value: 'High' },
     ];
+
+    get showForm() {
+        return this.isFormVisible && !this.isGuest;
+    }
+
+    get showConfirmation() {
+        return this.isConfirmationVisible && !this.isGuest;
+    }
 
     @wire(getRecord, { recordId: USER_ID, fields: FIELDS })
     user({ error, data }) {
