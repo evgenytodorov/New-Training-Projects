@@ -4,6 +4,7 @@
         <members>maintenanceRequestForm</members>
         <members>dataform</members>
         <members>navigation</members>
+        <members>ldsUtils</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -56,6 +57,7 @@
     </types>
     <types>
         <members>*</members>
+        <members>Lead</members>
         <name>CustomObject</name>
     </types>
     <types>

@@ -38,4 +38,11 @@
             ></lightning-button>
         </div>
     </lightning-card>
+    <template lwc:if={showConfirmation}>
+        <lightning-card title="Tour Scheduled" icon-name="utility:success">
+            <div class="slds-p-around_medium">
+                <p>Your tour has been scheduled successfully!</p>
+            </div>
+        </lightning-card>
+    </template>
 </template>
