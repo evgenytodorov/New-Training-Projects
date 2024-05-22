@@ -31,7 +31,6 @@
     <types>
         <members>maintenanceRequestForm</members>
         <members>dataform</members>
-        <members>loginForm</members>
         <members>navigation</members>
         <name>LightningComponentBundle</name>
     </types>
