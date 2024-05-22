@@ -29,13 +29,14 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>maintenanceRequestForm</members>
         <members>dataform</members>
         <members>loginForm</members>
         <members>navigation</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>CommunitiesLandingController</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
