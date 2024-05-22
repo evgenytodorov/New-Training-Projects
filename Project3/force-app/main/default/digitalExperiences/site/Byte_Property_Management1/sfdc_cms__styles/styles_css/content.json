@@ -5,11 +5,11 @@
     "sfdc_cms:media" : {
       "source" : {
         "type" : "file",
-        "ref" : "0sNaj000000Ilwa",
-        "size" : 125,
+        "ref" : "0sNaj000000IpnI",
+        "size" : 140,
         "mimeType" : "text/css"
       },
-      "url" : "/cms/media/MCLYVVVQ4MCNHWPDS6YYKQ2PWKIM?version=1.1"
+      "url" : "/cms/media/MCLYVVVQ4MCNHWPDS6YYKQ2PWKIM?version=2.1"
     }
   }
 }
