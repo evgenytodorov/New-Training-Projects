@@ -1,0 +1,11 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Rental Property",
+  "contentBody" : {
+    "activeViewId" : "Rental_Property",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-rental-property",
+    "urlPrefix" : "rental-property"
+  }
+}

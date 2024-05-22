@@ -1,0 +1,61 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Rental Property",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"13dfbb57-312e-4710-9dc6-9f019e2bf59a\",\"columns\":[{\"UUID\":\"18ea9d7f-1104-4a6b-86ec-f3947f22d212\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:dataform",
+              "id" : "92c10534-dc29-4699-a705-03dbb5d39226",
+              "type" : "component"
+            } ],
+            "id" : "18ea9d7f-1104-4a6b-86ec-f3947f22d212",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "13dfbb57-312e-4710-9dc6-9f019e2bf59a",
+          "type" : "component"
+        } ],
+        "id" : "3a4df1a2-96d0-4b27-a18a-407bb820fa1d",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Rental Property",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "e29bb197-9b7e-40f9-9ca7-06479a0e6778",
+          "type" : "component"
+        } ],
+        "id" : "4b922c93-866c-44d4-8fe7-76083c8ea15c",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "b4a5b344-9ba6-4436-86ab-a6796ca0f0f1",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-rental-property"
+  }
+}

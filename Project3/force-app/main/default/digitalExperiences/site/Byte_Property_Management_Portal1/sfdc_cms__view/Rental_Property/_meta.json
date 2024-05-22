@@ -1,0 +1,5 @@
+{
+  "apiName" : "Rental_Property",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}
