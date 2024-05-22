@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>maintenanceRequestForm</members>
+        <members>dataform</members>
+        <members>navigation</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>CommunitiesLandingController</members>
+        <members>MaintenanceRequestController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+
+
+
+
+    <types>
+        <members>Byte_Property_Management_App</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Byte_Property_Management_App_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>logo</members>
+        <name>ContentAsset</name>
+    </types>
+    
+
+
+    <types>
         <members>*</members>
         <name>Network</name>
     </types>
@@ -28,19 +62,6 @@
         <members>*</members>
         <name>CustomTab</name>
     </types>
-    <types>
-        <members>maintenanceRequestForm</members>
-        <members>dataform</members>
-        <members>navigation</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
+
     <version>60.0</version>
 </Package>
