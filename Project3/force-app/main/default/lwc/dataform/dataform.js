@@ -1,7 +1,8 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { createRecord } from 'lightning/uiRecordApi';
 import { reduceErrors } from 'c/ldsUtils';
+import isGuest from '@salesforce/user/isGuest';
 import LEAD_OBJECT from '@salesforce/schema/Lead';
 import LASTNAME_FIELD from '@salesforce/schema/Lead.LastName';
 import FIRSTNAME_FIELD from '@salesforce/schema/Lead.FirstName';
@@ -11,6 +12,9 @@ import TOUR_INFORMATION_FIELD from '@salesforce/schema/Lead.Tour_Information__c'
 import PROPERTY_TO_TOUR_FIELD from '@salesforce/schema/Lead.Property_to_Tour__c';
 
 export default class LdsCreateRecord extends LightningElement {
+    @track isConfirmationVisible = false;
+    isGuest = isGuest;
+    
     lastName = '';
     firstName = '';
     phone = '';
@@ -41,6 +45,12 @@ export default class LdsCreateRecord extends LightningElement {
     handlePropertyToTourChange(event) {
         this.propertyToTour = event.target.value;
     }
+
+    get showConfirmation() {
+        return this.isConfirmationVisible && !this.isGuest;
+    }
+
+
 
     async createLead() {
         const fields = {};
