@@ -14,6 +14,7 @@ export default class MaintenanceRequestForm extends LightningElement {
     @track contactId;
     @track isFormVisible = true;
     @track isConfirmationVisible = false;
+    isSubmitDisabled = false; // Not tracked because we don't need reactive UI changes for it
     isGuest = isGuest;
 
     priorityOptions = [
@@ -53,10 +54,22 @@ export default class MaintenanceRequestForm extends LightningElement {
             this.description = event.target.value;
         } else if (field === 'priority') {
             this.priority = event.target.value;
-        } 
+        }
     }
 
     handleSubmit() {
+        // Prevent additional clicks by checking the flag
+        if (this.isSubmitDisabled) {
+            return;
+        }
+
+        // Disable the submit button and prevent further clicks
+        this.isSubmitDisabled = true;
+
+        // Hide the form and show the confirmation page
+        this.isFormVisible = false;
+        this.isConfirmationVisible = true;
+
         const requestPayload = {
             subject: this.subject,
             description: this.description,
@@ -65,7 +78,12 @@ export default class MaintenanceRequestForm extends LightningElement {
         };
         console.log('Submitting Maintenance Request:', requestPayload);
 
-        submitMaintenanceRequest(requestPayload)
+        submitMaintenanceRequest({ 
+            subject: this.subject, 
+            description: this.description, 
+            priority: this.priority, 
+            contactId: this.contactId 
+        })
         .then(() => {
             this.dispatchEvent(
                 new ShowToastEvent({
@@ -74,19 +92,19 @@ export default class MaintenanceRequestForm extends LightningElement {
                     variant: 'success',
                 }),
             );
-            // Hide form and show confirmation
-            this.isFormVisible = false;
-            this.isConfirmationVisible = true;
+            // No need to change visibility or re-enable the button since it's already done
         })
         .catch(error => {
             console.error('Error submitting maintenance request:', error);
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Error',
-                    message: 'An error occurred while submitting the request.',
+                    message: error.body ? error.body.message : error.message, // Show specific error message from Apex
                     variant: 'error',
                 }),
             );
+            // Even in case of error, keep the button disabled and do not revert to form view
+            // Optionally, log the error or handle it differently if needed
         });
     }
 }
