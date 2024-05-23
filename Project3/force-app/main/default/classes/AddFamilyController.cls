@@ -15,7 +15,7 @@ public with sharing class AddFamilyController {
                 lastName = lastName,
                 email = emailId,
                 Phone = phoneVal
-            );
+            ); 
             insert newContact;
         } else {
             System.debug('Current user does not have necessary CRUD permissions on Contact object.');
