@@ -14,4 +14,22 @@ public with sharing class PropertyListingsController {
       throw new AuraHandledException(e.getMessage());
     }
   }
+
+  @AuraEnabled
+  public static ContentVersion getPropertyListingImg(String recordId){
+    try {
+      
+      List<ContentDocumentLink> cdlList = [SELECT ContentDocument.LatestPublishedVersionId FROM ContentDocumentLink WHERE LinkedEntityId = :recordId];
+      Set<String> cdlIdList = new Set<String>();
+      for(ContentDocumentLink cdl : cdlList){
+        cdlIdList.add(cdl.ContentDocument.LatestPublishedVersionId);
+      }
+      Set<String> fileTypes = new Set<String>{'jpg', 'gif', 'png'};
+      return [SELECT VersionDataUrl FROM ContentVersion WHERE Id IN :cdlIdList AND FileType IN :fileTypes AND Property_Listing__c = true LIMIT 1];
+
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+
 }
