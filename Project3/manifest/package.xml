@@ -5,11 +5,13 @@
         <members>dataform</members>
         <members>navigation</members>
         <members>ldsUtils</members>
+        <members>caseDataTableComponent</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>CommunitiesLandingController</members>
         <members>MaintenanceRequestController</members>
+        <members>CaseController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -58,6 +60,7 @@
     <types>
         <members>*</members>
         <members>Lead</members>
+        <members>Contact</members>
         <name>CustomObject</name>
     </types>
     <types>
