@@ -11,7 +11,7 @@ public without sharing class MonthlyStatementController {
     }
     
     List<Monthly_Statement__c> statements = [
-      SELECT Id, Name, Rental_Property__c, Rental_Property__r.Name, Amount_Charged__c
+      SELECT Id, Name, Rental_Property__c, Rental_Property__r.Name, Rental_Property__r.Monthly_Rent__c
       FROM Monthly_Statement__c
       WHERE Contact__c = :contactId
       LIMIT 10
