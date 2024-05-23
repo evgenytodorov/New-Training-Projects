@@ -4,8 +4,8 @@ import isGuest from "@salesforce/user/isGuest";
 
 const COLUMNS = [
   { label: "Statement ID", fieldName: "Name" },
-  { label: "Rental Property", fieldName: "RentalPropertyName", type: "text" },
-  { label: "Amount Charged", fieldName: "MonthlyRent", type: "currency" }
+  { label: "Rental Property", fieldName: "Rental_Property__c", type: "text" },
+  { label: "Amount Charged", fieldName: "Amount_Charged__c", type: "currency" }
 ];
 
 export default class MonthlyStatementDataTableComponent extends LightningElement {
@@ -24,8 +24,8 @@ export default class MonthlyStatementDataTableComponent extends LightningElement
           RentalPropertyName: statement.Rental_Property__r
             ? statement.Rental_Property__r.Name
             : "N/A",
-          MonthlyRent: statement.Rental_Property__r
-            ? statement.Rental_Property__r.Monthly_Rent__c
+            Amount_Charged__c: statement.Rental_Property__r
+            ? statement.Amount_Charged__c
             : "N/A"
         };
       });
