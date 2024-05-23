@@ -6,6 +6,7 @@
                 <lightning-textarea label="Description" value={description} onchange={handleInputChange} data-id="description"></lightning-textarea>
                 <lightning-combobox label="Priority" value={priority} options={priorityOptions} onchange={handleInputChange} data-id="priority"></lightning-combobox>
                 <lightning-button variant="brand" label="Submit" onclick={handleSubmit} disabled={isSubmitDisabled}></lightning-button>
+                <lightning-input type="hidden" value={rentalPropertyId} data-id="rentalPropertyId"></lightning-input>
             </div>
         </lightning-card>
     </template>
