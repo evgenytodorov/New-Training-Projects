@@ -11,10 +11,8 @@ public with sharing class addFamilyController {
             firstName = firstName,
             lastName = lastName,
             emailId = emailId,
-            PhoneVal = phoneVal,
-            Status = 'New',
-            Origin = 'Web'
+            PhoneVal = phoneVal
         );
-        insert newContact
+        insert newContact;
     }
 }
