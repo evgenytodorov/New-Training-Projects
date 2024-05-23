@@ -51,8 +51,9 @@ public without sharing class MaintenanceRequestController {
                 Description = description,
                 Priority = priority,
                 ContactId = contactId,
-                Rental_Property__c = rentalPropertyId
+                Rental_Property__c = rentalPropertyId // Ensure this field exists on Case
             );
+          
             insert maintenanceRequest;
             System.debug('Maintenance request inserted successfully');
         } catch (Exception e) {
@@ -61,3 +62,4 @@ public without sharing class MaintenanceRequestController {
         }
     }
 }
+

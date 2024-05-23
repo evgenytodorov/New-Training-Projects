@@ -31,4 +31,5 @@ public with sharing class PropertyListingsController {
       throw new AuraHandledException(e.getMessage());
     }
   }
+
 }

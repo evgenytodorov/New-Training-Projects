@@ -25,6 +25,7 @@
     <types>
         <members>Contact-Contact Layout</members>
         <members>Case-Case Layout</members>
+        <members>ContentVersion-Content Version Layout</members>
         <members>Rental_Property__c-Rental Property Layout</members>
         <name>Layout</name>
     </types>
@@ -48,6 +49,7 @@
         <members>Lead</members>
         <members>Contact</members>
         <members>Case</members>
+        <members>ContentVersion</members>
         <name>CustomObject</name>
     </types>
     <types>
