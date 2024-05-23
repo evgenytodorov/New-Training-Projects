@@ -45,6 +45,7 @@
         <members>*</members>
         <members>Lead</members>
         <members>Contact</members>
+        <members>Case</members>
         <name>CustomObject</name>
     </types>
     <types>

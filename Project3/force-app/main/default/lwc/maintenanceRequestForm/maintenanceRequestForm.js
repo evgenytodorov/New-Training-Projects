@@ -1,6 +1,7 @@
 import { LightningElement, track, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import submitMaintenanceRequest from '@salesforce/apex/MaintenanceRequestController.submitMaintenanceRequest';
+import getRentalProperty from '@salesforce/apex/MaintenanceRequestController.getRentalProperty';
 import { getRecord } from 'lightning/uiRecordApi';
 import USER_ID from '@salesforce/user/Id';
 import isGuest from '@salesforce/user/isGuest';
