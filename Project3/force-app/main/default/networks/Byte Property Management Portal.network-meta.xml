@@ -50,7 +50,6 @@
     </networkAuthApiSettings>
     <networkMemberGroups>
         <profile>admin</profile>
-        <profile>customer community login user</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
