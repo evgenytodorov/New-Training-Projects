@@ -39,7 +39,7 @@ export default class ContactForm extends LightningElement {
     }
 
     
-    handleInputChange(event) {
+    contactChangeVal(event) {
         const field = event.target.dataset.id;
         if (field === 'firstName') {
             this.firstName = event.target.value;
