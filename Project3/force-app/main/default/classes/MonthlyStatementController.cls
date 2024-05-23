@@ -1,18 +1,23 @@
-public with sharing class MonthlyStatementController {
+public without sharing class MonthlyStatementController {
   @AuraEnabled(cacheable=true)
   public static List<Monthly_Statement__c> getMonthlyStatementsForLoggedInContact() {
     // Get the current user's contact ID
     Id contactId = [SELECT ContactId FROM User WHERE Id = :UserInfo.getUserId()].ContactId;
-    System.debug(contactId);
+    System.debug('Contact ID: ' + contactId);
+    
     if (contactId == null) {
+      System.debug('No Contact ID found for the current user.');
       return new List<Monthly_Statement__c>();
     }
-    // Query Monthly_Statement__c for the current user's contact
-    return [
-      SELECT Id, Name, Rental_Property__c, Amount_Charged__c
+    
+    List<Monthly_Statement__c> statements = [
+      SELECT Id, Name, Rental_Property__c, Rental_Property__r.Name, Amount_Charged__c
       FROM Monthly_Statement__c
       WHERE Contact__c = :contactId
       LIMIT 10
     ];
+    
+    System.debug('Retrieved Statements: ' + statements);
+    return statements;
   }
 }
