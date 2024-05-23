@@ -35,5 +35,18 @@
         <name>ContentAsset</name>
     </types>
     
+    
+
+    <types>
+        <members>*</members>
+        <members>Lead</members>
+        <members>Contact</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+
     <version>60.0</version>
 </Package>

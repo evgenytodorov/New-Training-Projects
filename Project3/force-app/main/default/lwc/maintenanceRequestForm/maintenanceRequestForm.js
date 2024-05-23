@@ -12,6 +12,7 @@ export default class MaintenanceRequestForm extends LightningElement {
     @track description = '';
     @track priority = '';
     @track contactId;
+    @track rentalPropertyId;
     @track isFormVisible = true;
     @track isConfirmationVisible = false;
     isSubmitDisabled = false; // Not tracked because we don't need reactive UI changes for it
@@ -35,6 +36,7 @@ export default class MaintenanceRequestForm extends LightningElement {
     user({ error, data }) {
         if (data) {
             this.contactId = data.fields.ContactId.value;
+            this.queryRentalProperty(this.contactId);
         } else if (error) {
             this.dispatchEvent(
                 new ShowToastEvent({
@@ -44,6 +46,22 @@ export default class MaintenanceRequestForm extends LightningElement {
                 }),
             );
         }
+    }
+
+    queryRentalProperty(contactId) {
+        getRentalProperty({ contactId })
+            .then(result => {
+                this.rentalPropertyId = result;
+            })
+            .catch(error => {
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Error loading rental property data',
+                        message: error.body.message,
+                        variant: 'error',
+                    }),
+                );
+            });
     }
 
     handleInputChange(event) {
@@ -74,16 +92,12 @@ export default class MaintenanceRequestForm extends LightningElement {
             subject: this.subject,
             description: this.description,
             priority: this.priority,
-            contactId: this.contactId
+            contactId: this.contactId,
+            rentalPropertyId: this.rentalPropertyId
         };
         console.log('Submitting Maintenance Request:', requestPayload);
 
-        submitMaintenanceRequest({ 
-            subject: this.subject, 
-            description: this.description, 
-            priority: this.priority, 
-            contactId: this.contactId 
-        })
+        submitMaintenanceRequest(requestPayload)
         .then(() => {
             this.dispatchEvent(
                 new ShowToastEvent({

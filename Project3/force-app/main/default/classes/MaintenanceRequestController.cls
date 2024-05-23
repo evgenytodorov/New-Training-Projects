@@ -1,27 +1,24 @@
 public with sharing class MaintenanceRequestController {
     @AuraEnabled
-    public static void submitMaintenanceRequest(String subject, String description, String priority, String contactId) {
-        System.debug('Entering submitMaintenanceRequest');
-        System.debug('subject: ' + subject);
-        System.debug('description: ' + description);
-        System.debug('priority: ' + priority);
-        System.debug('contactId: ' + contactId);
-        
-        // Create a new Case record
-        Case newCase = new Case(
+    public static void submitMaintenanceRequest(String subject, String description, String priority, Id contactId, Id rentalPropertyId) {
+        Case maintenanceRequest = new Case(
             Subject = subject,
             Description = description,
             Priority = priority,
-            ContactId = contactId
+            ContactId = contactId,
+            Rental_Property__c = rentalPropertyId // Assuming you have a Rental_Property__c lookup field on Case
         );
+        insert maintenanceRequest;
+    }
 
-        // Insert the new Case record
-        try {
-            insert newCase;
-            System.debug('Case created successfully');
-        } catch (Exception e) {
-            System.debug('Error creating case: ' + e.getMessage());
-            throw new AuraHandledException('Error creating case: ' + e.getMessage());
-        }
+    @AuraEnabled(cacheable=true)
+    public static Id getRentalProperty(Id contactId) {
+        Rental_Property__c rentalProperty = [
+            SELECT Id 
+            FROM Rental_Property__c 
+            WHERE Id IN (SELECT Rental_Property__c FROM Contact WHERE Id = :contactId)
+            LIMIT 1
+        ];
+        return rentalProperty.Id;
     }
 }
