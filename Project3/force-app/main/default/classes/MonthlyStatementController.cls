@@ -1,7 +1,6 @@
 public without sharing class MonthlyStatementController {
   @AuraEnabled(cacheable=true)
   public static List<Monthly_Statement__c> getMonthlyStatementsForLoggedInContact() {
-    // Get the current user's contact ID
     Id contactId = [SELECT ContactId FROM User WHERE Id = :UserInfo.getUserId()].ContactId;
     System.debug('Contact ID: ' + contactId);
     
@@ -11,7 +10,7 @@ public without sharing class MonthlyStatementController {
     }
     
     List<Monthly_Statement__c> statements = [
-      SELECT Id, Name, Rental_Property__c, Rental_Property__r.Name, Rental_Property__r.Monthly_Rent__c
+      SELECT Id, Name, Rental_Property__c, Rental_Property__r.Name, Amount_Charged__c
       FROM Monthly_Statement__c
       WHERE Contact__c = :contactId
       LIMIT 10
