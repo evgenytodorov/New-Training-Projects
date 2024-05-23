@@ -1,7 +1,7 @@
-import { LightningElement, track } from 'lwc';
-import { NavigationMixin } from 'lightning/navigation';
-import isGuest from '@salesforce/user/isGuest'; 
-import logo from '@salesforce/resourceUrl/logo'; 
+import { LightningElement, track } from "lwc";
+import { NavigationMixin } from "lightning/navigation";
+import isGuest from "@salesforce/user/isGuest";
+import logo from "@salesforce/resourceUrl/logo";
 
 export default class Navigation extends NavigationMixin(LightningElement) {
   @track isGuest = isGuest;
@@ -11,26 +11,26 @@ export default class Navigation extends NavigationMixin(LightningElement) {
 
   navigateToHome(event) {
     event.preventDefault();
-    window.location.href = '/bytepropertymanagement';
+    window.location.href = "/bytepropertymanagement";
   }
 
   navigateToTourSignUp(event) {
     event.preventDefault();
-    window.location.href = '/bytepropertymanagement/tours';
+    window.location.href = "/bytepropertymanagement/tours";
   }
 
   navigateToSignUp(event) {
     event.preventDefault();
-    window.location.href = '/bytepropertymanagement/SelfRegister';
+    window.location.href = "/bytepropertymanagement/SelfRegister";
   }
 
   navigateToLogin(event) {
     event.preventDefault();
-    window.location.href = '/bytepropertymanagement/login';
+    window.location.href = "/bytepropertymanagement/login";
   }
 
   handleLogout(event) {
     event.preventDefault();
-    window.location.href = '/secur/logout.jsp';
+    window.location.href = "/secur/logout.jsp";
   }
 }
