@@ -14,6 +14,7 @@ export default class MaintenanceRequestForm extends LightningElement {
     @track priority = '';
     @track contactId;
     @track rentalPropertyId;
+    @track rentalPropertyName;
     @track isFormVisible = true;
     @track isConfirmationVisible = false;
     isSubmitDisabled = false; // Not tracked because we don't need reactive UI changes for it
@@ -52,7 +53,10 @@ export default class MaintenanceRequestForm extends LightningElement {
     queryRentalProperty(contactId) {
         getRentalProperty({ contactId })
             .then(result => {
-                this.rentalPropertyId = result;
+                this.rentalPropertyId = result.rentalPropertyId;
+                this.rentalPropertyName = result.rentalPropertyName;
+                console.log('Retrieved Rental Property ID:', this.rentalPropertyId);
+                console.log('Retrieved Rental Property Name:', this.rentalPropertyName);
             })
             .catch(error => {
                 this.dispatchEvent(
