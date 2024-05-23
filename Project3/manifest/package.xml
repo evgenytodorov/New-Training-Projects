@@ -35,37 +35,5 @@
         <name>ContentAsset</name>
     </types>
     
-
-
-    <types>
-        <members>*</members>
-        <name>Network</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomSite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>DigitalExperienceBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>DigitalExperienceConfig</name>
-    </types>
-    <types>
-        <members>CommunitiesLanding</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <members>Lead</members>
-        <members>Contact</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomTab</name>
-    </types>
     <version>60.0</version>
 </Package>
