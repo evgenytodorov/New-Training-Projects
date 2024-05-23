@@ -6,22 +6,26 @@
         <members>navigation</members>
         <members>ldsUtils</members>
         <members>caseDataTableComponent</members>
+        <members>propertyListings</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>CommunitiesLandingController</members>
         <members>MaintenanceRequestController</members>
         <members>CaseController</members>
+        <members>PropertyListingsController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
-
-
-
-
+    <types>
+        <members>Contact-Contact Layout</members>
+        <members>Case-Case Layout</members>
+        <members>Rental_Property__c-Rental Property Layout</members>
+        <name>Layout</name>
+    </types>
     <types>
         <members>Byte_Property_Management_App</members>
         <name>CustomApplication</name>
@@ -41,6 +45,7 @@
         <members>*</members>
         <members>Lead</members>
         <members>Contact</members>
+        <members>Case</members>
         <name>CustomObject</name>
     </types>
     <types>
