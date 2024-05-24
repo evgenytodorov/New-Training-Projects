@@ -53,6 +53,7 @@ public without sharing class MaintenanceRequestController {
                 ContactId = contactId,
                 Rental_Property__c = rentalPropertyId
             );
+          
             insert maintenanceRequest;
             System.debug('Maintenance request inserted successfully');
         } catch (Exception e) {
@@ -61,3 +62,4 @@ public without sharing class MaintenanceRequestController {
         }
     }
 }
+

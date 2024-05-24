@@ -15,6 +15,7 @@ public without sharing class PropertyListingsController {
     }
   }
 
+
   @AuraEnabled(cacheable=true)
   public static ContentVersion getPropertyListingImg(String recordId){
     try {
