@@ -1,4 +1,4 @@
-public with sharing class PropertyListingsController {
+public without sharing class PropertyListingsController {
   public PropertyListingsController() {
   }
 
@@ -15,10 +15,10 @@ public with sharing class PropertyListingsController {
     }
   }
 
-  @AuraEnabled
+
+  @AuraEnabled(cacheable=true)
   public static ContentVersion getPropertyListingImg(String recordId){
     try {
-      
       List<ContentDocumentLink> cdlList = [SELECT ContentDocument.LatestPublishedVersionId FROM ContentDocumentLink WHERE LinkedEntityId = :recordId];
       Set<String> cdlIdList = new Set<String>();
       for(ContentDocumentLink cdl : cdlList){
@@ -31,5 +31,4 @@ public with sharing class PropertyListingsController {
       throw new AuraHandledException(e.getMessage());
     }
   }
-
 }
