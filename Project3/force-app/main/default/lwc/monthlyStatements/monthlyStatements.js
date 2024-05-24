@@ -9,7 +9,7 @@ const COLUMNS = [
 ];
 
 export default class MonthlyStatementDataTableComponent extends LightningElement {
-  isGuest = isGuest;
+  isNotGuest = !isGuest;
 
   @track statements;
   @track columns = COLUMNS;
