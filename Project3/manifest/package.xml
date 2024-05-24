@@ -7,6 +7,7 @@
         <members>ldsUtils</members>
         <members>caseDataTableComponent</members>
         <members>propertyListings</members>
+        <members>listingImage</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -39,9 +40,23 @@
         <members>logo</members>
         <name>ContentAsset</name>
     </types>
-    
-    
-
+    <types>
+        <members>Byte Property Management Portal Profile</members>
+        <members>Custom Customer Community User</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Rental_Property__c.*</members>
+        <name>SharingCriteriaRule</name>
+    </types>
+    <types>
+        <members>Rental_Property__c.*</members>
+        <name>SharingOwnerRule</name>
+    </types>
+    <types>
+        <members>GrantApexAccessToCommunityUser</members>
+        <name>PermissionSet</name>
+    </types>
     <types>
         <members>*</members>
         <members>Lead</members>
