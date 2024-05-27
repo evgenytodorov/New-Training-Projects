@@ -14,11 +14,6 @@ export default class Navigation extends NavigationMixin(LightningElement) {
     window.location.href = "/bytepropertymanagement";
   }
 
-  navigateToTourSignUp(event) {
-    event.preventDefault();
-    window.location.href = "/bytepropertymanagement/tours";
-  }
-
   navigateToSignUp(event) {
     event.preventDefault();
     window.location.href = "/bytepropertymanagement/SelfRegister";

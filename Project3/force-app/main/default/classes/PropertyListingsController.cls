@@ -6,7 +6,7 @@ public without sharing class PropertyListingsController {
   public static List<Rental_Property__c> getUnoccupiedRentalProperties() {
     try {
       return [
-        SELECT Name, Occupied__c, Address__c, Bathrooms__c, Bedrooms__c
+        SELECT Name, Occupied__c, Address__c, Bathrooms__c, Bedrooms__c, Garage__c
         FROM Rental_Property__c
         WHERE Occupied__c = FALSE
       ];

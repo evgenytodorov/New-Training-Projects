@@ -1,13 +1,12 @@
-import { LightningElement, track, wire } from "lwc";
+import { LightningElement, wire } from "lwc";
 import { NavigationMixin } from "lightning/navigation";
-import isGuest from "@salesforce/user/isGuest";
 import getUnoccupiedRentalProperties from "@salesforce/apex/PropertyListingsController.getUnoccupiedRentalProperties";
 
 export default class Home extends NavigationMixin(LightningElement) {
   @wire(getUnoccupiedRentalProperties)
   properties;
 
-  navToResidencePage(e) {
+  navToRentalPropertyPage(e) {
     // the name Residence_Viewer__c needs to correspond with
     // the api name of the page made in experience builder
     this[NavigationMixin.Navigate]({

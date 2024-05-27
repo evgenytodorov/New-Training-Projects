@@ -1,4 +1,4 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import getPropertyListingImg from "@salesforce/apex/PropertyListingsController.getPropertyListingImg";
 
 export default class ListingImage extends LightningElement {
