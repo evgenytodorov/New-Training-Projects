@@ -8,6 +8,7 @@
         <members>caseDataTableComponent</members>
         <members>propertyListings</members>
         <members>listingImage</members>
+        <members>propertyDetail</members>
         <members>monthlyStatements</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -16,6 +17,7 @@
         <members>MaintenanceRequestController</members>
         <members>CaseController</members>
         <members>PropertyListingsController</members>
+        <members>PropertyDetailController</members>
         <members>MaintenanceRequestController</members>
         <name>ApexClass</name>
     </types>

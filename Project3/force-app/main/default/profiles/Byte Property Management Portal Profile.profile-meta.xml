@@ -18,6 +18,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PropertyDetailController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PropertyListingsController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -540,11 +544,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Rental_Property__c.Pets_Allowed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Rental_Property__c.Property_Tour__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
