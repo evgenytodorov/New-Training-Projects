@@ -5,10 +5,11 @@ import isGuest from "@salesforce/user/isGuest";
 const COLUMNS = [
   { label: "Statement ID", fieldName: "Name" },
   { label: "Rental Property", fieldName: "RentalPropertyName", type: "text" },
-  { label: "Amount Charged", fieldName: "Amount_Charged__c", type: "currency" }
+  { label: "Amount Charged", fieldName: "Amount_Charged__c", type: "currency" },
+  { label: "Statement Date", fieldName: "Date__c", type: "date" } // Added date column
 ];
 
-export default class MonthlyStatementDataTableComponent extends LightningElement {
+export default class MonthlyStatements extends LightningElement {
   isNotGuest = !isGuest;
 
   @track statements;
@@ -17,7 +18,7 @@ export default class MonthlyStatementDataTableComponent extends LightningElement
   @wire(getMonthlyStatementsForLoggedInContact)
   wiredStatements({ error, data }) {
     if (data) {
-      // Transforming data to include Rental Property Name
+      // Transforming data to include Rental Property Name and Statement Date
       this.statements = data.map((statement) => {
         return {
           ...statement,
