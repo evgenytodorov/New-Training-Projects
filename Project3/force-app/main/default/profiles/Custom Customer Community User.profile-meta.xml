@@ -19,7 +19,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PropertyDetailController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>PropertyListingsController</apexClass>
