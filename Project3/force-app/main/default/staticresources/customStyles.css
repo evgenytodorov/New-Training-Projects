@@ -1,3 +1,10 @@
-.slds-icon-text-default {
-    --slds-c-icon-color-foreground: #06a499;
+.comm-login-form__login-button, .comm-self-register__submit-button {
+    font-family: 'Playfair Display', serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+}
+    
+.slds-carousel__image {
+        max-width: 600px;
 }
