@@ -1,8 +1,10 @@
 <template>
   <template lwc:if={isNotGuest}>
+    <div class = "slds-card">
       <lightning-card title="My Monthly Statements" icon-name="utility:form" style="--slds-c-icon-color-foreground-default: #0F3045;">
           <lightning-datatable key-field="Id" data={statements} columns={columns}>
           </lightning-datatable>
       </lightning-card>
+    </div>
   </template>  
 </template>
