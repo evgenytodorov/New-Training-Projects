@@ -1,8 +1,8 @@
 <template>
   <template lwc:if={isNotGuest}>
-    <lightning-card title="My Monthly Statements" icon-name="standard:report">
-      <lightning-datatable key-field="Id" data={statements} columns={columns}>
-      </lightning-datatable>
-    </lightning-card>
+      <lightning-card title="My Monthly Statements" icon-name="standard:report" style="--slds-c-icon-color-foreground-default: #0F3045;">
+          <lightning-datatable key-field="Id" data={statements} columns={columns}>
+          </lightning-datatable>
+      </lightning-card>
   </template>  
 </template>

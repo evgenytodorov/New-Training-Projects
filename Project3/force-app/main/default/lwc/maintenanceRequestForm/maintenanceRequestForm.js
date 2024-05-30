@@ -11,7 +11,6 @@ const FIELDS = ['User.ContactId'];
 export default class MaintenanceRequestForm extends LightningElement {
     @track subject = '';
     @track description = '';
-    @track priority = '';
     @track contactId;
     @track rentalPropertyId;
     @track rentalPropertyName;
@@ -19,12 +18,6 @@ export default class MaintenanceRequestForm extends LightningElement {
     @track isConfirmationVisible = false;
     isSubmitDisabled = false; // Not tracked because we don't need reactive UI changes for it
     isGuest = isGuest;
-
-    priorityOptions = [
-        { label: 'Low', value: 'Low' },
-        { label: 'Medium', value: 'Medium' },
-        { label: 'High', value: 'High' },
-    ];
 
     get showForm() {
         return this.isFormVisible && !this.isGuest;
@@ -75,9 +68,7 @@ export default class MaintenanceRequestForm extends LightningElement {
             this.subject = event.target.value;
         } else if (field === 'description') {
             this.description = event.target.value;
-        } else if (field === 'priority') {
-            this.priority = event.target.value;
-        }
+        } 
     }
 
     handleSubmit() {
@@ -96,7 +87,6 @@ export default class MaintenanceRequestForm extends LightningElement {
         const requestPayload = {
             subject: this.subject,
             description: this.description,
-            priority: this.priority,
             contactId: this.contactId,
             rentalPropertyId: this.rentalPropertyId
         };
