@@ -11,6 +11,8 @@
         <members>propertyDetail</members>
         <members>monthlyStatements</members>
         <members>hero</members>
+        <members>addFamilyForm </members>
+        <members>modal</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -20,6 +22,8 @@
         <members>PropertyListingsController</members>
         <members>PropertyDetailController</members>
         <members>MaintenanceRequestController</members>
+        <members>AddFamilyController</members>
+        <members>MonthlyStatementController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -38,21 +42,12 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Byte_Property_Management_App_UtilityBar</members>
+        <members>*</members>
         <name>FlexiPage</name>
     </types>
     <types>
         <members>logo</members>
         <name>ContentAsset</name>
-    </types>
-    <types>
-        <members>Byte Property Management Portal Profile</members>
-        <members>Custom Customer Community User</members>
-        <name>Profile</name>
-    </types>
-    <types>
-        <members>Rental_Property__c.*</members>
-        <name>SharingCriteriaRule</name>
     </types>
     <types>
         <members>Rental_Property__c.*</members>
@@ -75,28 +70,5 @@
         <name>CustomTab</name>
     </types>
 
-
-
-<types>
-        <members>*</members>
-        <name>Network</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomSite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>DigitalExperienceBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>DigitalExperienceConfig</name>
-    </types>
-    <types>
-        <members>CommunitiesLanding</members>
-        <name>ApexPage</name>
-    </types>
-    
     <version>60.0</version>
 </Package>
