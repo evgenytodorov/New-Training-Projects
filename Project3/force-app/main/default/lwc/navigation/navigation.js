@@ -23,6 +23,11 @@ export default class Navigation extends NavigationMixin(LightningElement) {
     event.preventDefault();
     window.location.href = "/bytepropertymanagement/login";
   }
+  
+  navigateToAccount(event) {
+    event.preventDefault();
+    window.location.href = "/bytepropertymanagement/account";
+  }
 
   handleLogout(event) {
     event.preventDefault();
