@@ -18,7 +18,7 @@
 }
 
 .nav-links a {
-  color: #0f3045;
+  color: #15616f;
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -29,13 +29,13 @@
 }
 
 .nav-links a:hover {
-  background-color: #0f3045;
+  background-color: #15616f;
   color: #ffffff;
   border-radius: 4px;
 }
 
 .nav-links a.active {
-  background-color: #0f3045;
+  background-color: #15616f;
   color: #ffffff;
   border-radius: 4px;
 }
