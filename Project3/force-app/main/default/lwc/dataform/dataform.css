@@ -1,5 +1,32 @@
-/* dataform.css */
-.slds-var-m-bottom_x-small {
-    width: 500px; /* Adjust this width as needed */
-    display: block;
+.custom-form {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #f4f6f9;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.lightning-card {
+    border: none;
+}
+
+.slds-card {
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slds-m-bottom_small {
+    margin-bottom: 0.5rem;
+}
+
+.slds-m-top_medium {
+    margin-top: 1rem;
+}
+
+.slds-card__header {
+    border-bottom: none;
+}
+
+.slds-card__body {
+    padding: 0;

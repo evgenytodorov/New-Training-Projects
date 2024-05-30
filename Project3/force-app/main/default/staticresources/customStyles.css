@@ -11,4 +11,5 @@
 /* Adjust carousel image max-width */
 .slds-carousel__image {
     max-width: 600px;
+    height: 100%;
 }

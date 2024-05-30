@@ -1,0 +1,5 @@
+{
+  "apiName" : "Unoccupied_Rental_Property",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

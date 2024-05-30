@@ -12,7 +12,7 @@ export default class Home extends NavigationMixin(LightningElement) {
     this[NavigationMixin.Navigate]({
       type: "comm__namedPage",
       attributes: {
-        name: "RentalProperty__c"
+        name: "Unoccupied_Rental_Property__c"
       },
       state: {
         c__recordId: e.target.dataset.id
