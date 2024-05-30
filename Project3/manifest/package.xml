@@ -10,6 +10,7 @@
         <members>listingImage</members>
         <members>propertyDetail</members>
         <members>monthlyStatements</members>
+        <members>hero</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
