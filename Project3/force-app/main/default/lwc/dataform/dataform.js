@@ -1,8 +1,9 @@
-import { LightningElement, track } from "lwc";
+import { LightningElement, track, wire } from "lwc";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import { createRecord } from "lightning/uiRecordApi";
 import { reduceErrors } from "c/ldsUtils";
 import isGuest from "@salesforce/user/isGuest";
+import { CurrentPageReference } from 'lightning/navigation';
 import LEAD_OBJECT from "@salesforce/schema/Lead";
 import LASTNAME_FIELD from "@salesforce/schema/Lead.LastName";
 import FIRSTNAME_FIELD from "@salesforce/schema/Lead.FirstName";
@@ -14,13 +15,23 @@ import PROPERTY_TO_TOUR_FIELD from "@salesforce/schema/Lead.Property_to_Tour__c"
 export default class LdsCreateRecord extends LightningElement {
   @track isConfirmationVisible = false;
   isGuest = isGuest;
+  @track propertyToTour = "";
+  recordId;
 
   lastName = "";
   firstName = "";
   phone = "";
   email = "";
   tourInformation = "";
-  propertyToTour = "";
+  // propertyToTour = "";
+
+  @wire(CurrentPageReference)
+  setCurrentPageReference(currentPageReference) {
+    this.recordId = currentPageReference?.state?.c__recordId;
+    if (this.recordId) {
+      this.propertyToTour = this.recordId; // Automatically set the property to tour field
+    }
+  }
 
   handleLastNameChange(event) {
     this.lastName = event.target.value;
@@ -42,9 +53,9 @@ export default class LdsCreateRecord extends LightningElement {
     this.tourInformation = event.target.value;
   }
 
-  handlePropertyToTourChange(event) {
-    this.propertyToTour = event.target.value;
-  }
+  // handlePropertyToTourChange(event) {
+  //   this.propertyToTour = event.target.value;
+  // }
 
   get showConfirmation() {
     return this.isConfirmationVisible && !this.isGuest;
@@ -64,11 +75,12 @@ export default class LdsCreateRecord extends LightningElement {
       const lead = await createRecord(recordInput);
       this.dispatchEvent(
         new ShowToastEvent({
-          title: "Success",
-          message: "Tour created",
+          title: "Success!",
+          message: "Tour created!",
           variant: "success"
         })
       );
+      this.isConfirmationVisible = true;
     } catch (error) {
       this.dispatchEvent(
         new ShowToastEvent({
