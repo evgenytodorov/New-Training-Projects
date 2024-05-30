@@ -1,51 +1,46 @@
 <template>
     <template lwc:if={recordId}>
-        <div class="slds-m-around_medium slds-card">
-        <lightning-card>
-            <div class="slds-grid slds-gutters slds-wrap">
-            <template lwc:if={imgUrlList}>
-                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-align_absolute-center">
-                    <lightning-carousel disable-auto-scroll>                        
-                        <template for:each={imgUrlList} for:item="img">
-                            <lightning-carousel-image key={img.Id} class="slds-align_absolute-center" src={img.VersionDataUrl}></lightning-carousel-image>
-                        </template>                        
-                    </lightning-carousel>
+        <div class="slds-card">
+            <lightning-card>
+                <div class="slds-grid slds-gutters slds-wrap">
+                    <template lwc:if={imgUrlList}>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-align_absolute-center">
+                            <lightning-carousel disable-auto-scroll>
+                                <template for:each={imgUrlList} for:item="img">
+                                    <lightning-carousel-image key={img.Id} class="slds-align_absolute-center"
+                                        src={img.VersionDataUrl}></lightning-carousel-image>
+                                </template>
+                            </lightning-carousel>
+                        </div>
+                    </template>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-wrap">
+                        <lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+
+                            <!--<div class="slds-col slds-size_1-of-2">-->
+                            <lightning-output-field field-name={name}> </lightning-output-field>
+                            <lightning-output-field field-name={address}> </lightning-output-field>
+                            <lightning-output-field field-name={monthlyRent}> </lightning-output-field>
+                            <lightning-output-field field-name={description}> </lightning-output-field>
+                            <!--</div>-->
+                            <!--<div class="slds-col slds-size_1-of-2">-->
+                            <lightning-output-field field-name={squareFootage}> </lightning-output-field>
+                            <lightning-output-field field-name={bedrooms}> </lightning-output-field>
+                            <lightning-output-field field-name={bathrooms}> </lightning-output-field>
+                            <lightning-output-field field-name={garage}> </lightning-output-field>
+                            <lightning-output-field field-name={petsAllowed}> </lightning-output-field>
+                            <!--</div>-->
+                            <!--<div class="slds-align_absolute-center">-->
+                            <lightning-button label="Schedule a Tour" variant="brand"
+                                onclick={handleScheduleTour}></lightning-button>
+                            <!--</div>-->
+                            <!--</div>-->
+                        </lightning-record-view-form>
+                        <c-modal show-modal={scheduleTour} onclose={handleModalClose} modal-header="Schedule a Tour">
+                            <c-dataform></c-dataform>
+                        </c-modal>
+                    </div>
                 </div>
-            </template>
-            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-wrap">
-            <lightning-record-view-form
-            object-api-name={objectApiName}
-            record-id={recordId}
-            >
-                
-                    <!--<div class="slds-col slds-size_1-of-2">-->                    
-                        <lightning-output-field field-name={name}> </lightning-output-field>
-                        <lightning-output-field field-name={address}> </lightning-output-field>
-                        <lightning-output-field field-name={monthlyRent}> </lightning-output-field>
-                        <lightning-output-field field-name={description}> </lightning-output-field>
-                    <!--</div>-->
-                    <!--<div class="slds-col slds-size_1-of-2">-->
-                        <lightning-output-field field-name={squareFootage}> </lightning-output-field>
-                        <lightning-output-field field-name={bedrooms}> </lightning-output-field>
-                        <lightning-output-field field-name={bathrooms}> </lightning-output-field>                                                
-                        <lightning-output-field field-name={garage}> </lightning-output-field>
-                        <lightning-output-field field-name={petsAllowed}> </lightning-output-field>
-                    <!--</div>-->
-                    <!--<div class="slds-align_absolute-center">-->
-                        <lightning-button
-                            label="Schedule a Tour"
-                            variant="brand"
-                            onclick={handleScheduleTour}                            
-                        ></lightning-button>
-                    <!--</div>-->
-                <!--</div>-->
-            </lightning-record-view-form>
-            <template lwc:if={scheduleTour}>
-                <c-dataform></c-dataform>
-            </template>
-            </div>
-            </div>
-        </lightning-card>
-        </div>        
+            </lightning-card>
+        </div>
     </template>
 </template>

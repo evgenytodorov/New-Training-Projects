@@ -1,45 +1,21 @@
 <template>
-  <lightning-card title="Schedule a Tour!" icon-name="utility:form" class="slds-card custom-card">
-    <div class="slds-p-around_medium custom-form">
-      <lightning-input
-        label="First Name"
-        onchange={handleFirstNameChange}
-        class="slds-m-bottom_small"
-      ></lightning-input>
-      <lightning-input
-        label="Last Name"
-        onchange={handleLastNameChange}
-        class="slds-m-bottom_small"
-      ></lightning-input>
-      <lightning-input
-        label="Phone"
-        onchange={handlePhoneChange}
-        class="slds-m-bottom_small"
-      ></lightning-input>
-      <lightning-input
-        label="Email"
-        onchange={handleEmailChange}
-        class="slds-m-bottom_small"
-      ></lightning-input>
-      <lightning-input
-        type="datetime-local"
-        label="Tour Information"
-        onchange={handleTourInformationChange}
-        class="slds-m-bottom_small"
-      ></lightning-input>
-      <lightning-button
-        label="Create Tour"
-        variant="brand"
-        onclick={createLead}
-        class="slds-m-top_medium"
-      ></lightning-button>
-    </div>
-  </lightning-card>
-  <template lwc:if={showConfirmation}>
-    <lightning-card title="Tour Scheduled" icon-name="utility:success" class="slds-card slds-m-top_medium">
-      <div class="slds-p-around_medium">
-        <p>Your tour has been scheduled successfully!</p>
-      </div>
+    <lightning-card>
+        <div class="slds-p-around_medium custom-form">
+            <lightning-input label="First Name" onchange={handleFirstNameChange}
+                class="slds-m-bottom_small"></lightning-input>
+            <lightning-input label="Last Name" onchange={handleLastNameChange}
+                class="slds-m-bottom_small"></lightning-input>
+            <lightning-input label="Phone" onchange={handlePhoneChange} class="slds-m-bottom_small"></lightning-input>
+            <lightning-input label="Email" onchange={handleEmailChange} class="slds-m-bottom_small"></lightning-input>
+            <lightning-input type="datetime-local" label="Tour Information" onchange={handleTourInformationChange}
+                class="slds-m-bottom_small"></lightning-input>
+        </div>
     </lightning-card>
-  </template>
+    <template lwc:if={showConfirmation}>
+        <lightning-card title="Tour Scheduled" icon-name="utility:success" class="slds-card slds-m-top_medium">
+            <div class="slds-p-around_medium">
+                <p>Your tour has been scheduled successfully!</p>
+            </div>
+        </lightning-card>
+    </template>
 </template>

@@ -24,7 +24,7 @@ export default class ResidencePage extends NavigationMixin(LightningElement) {
  
     recordId;
     imgUrlList;
-    scheduleTour;
+    scheduleTour = false;
 
     connectedCallback() {
         this.recordId = this.currentPageReference?.state?.c__recordId;
@@ -51,8 +51,11 @@ export default class ResidencePage extends NavigationMixin(LightningElement) {
     monthlyRent = MONTHLY_RENT_FIELD;
     description = DESCRIPTION_FIELD;
 
-    handleScheduleTour(event){
+    handleScheduleTour() {
         this.scheduleTour = true;
     }
 
+    handleModalClose() {
+        this.scheduleTour = false;
+    }
 }

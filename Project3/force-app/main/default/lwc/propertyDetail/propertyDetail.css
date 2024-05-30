@@ -2,3 +2,28 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     /* Additional custom styles here */
   }
+
+  .slds-carousel__panel-header {
+    display: none; /* Hide the image header */
+}
+ 
+.slds-carousel__content {
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+}
+ 
+.slds-carousel__panels {
+    padding-bottom: 0; /* Remove whitespace underneath images */
+}
+ 
+.slds-carousel__panel {
+    padding-bottom: 0; /* Ensure no padding at the bottom of each panel */
+}
+ 
+.lightning-carousel {
+    padding: 0; /* Ensure no padding around the carousel */
+}
+ 
+.lightning-carousel-image {
+    margin: 0; /* Ensure no margin around the images */
+}

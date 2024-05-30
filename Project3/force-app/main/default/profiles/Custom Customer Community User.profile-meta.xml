@@ -595,6 +595,10 @@
         <object>Rental_Property__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>CommunitiesLanding</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Monthly_Statement__c.Monthly_Statement_Record_Type</recordType>
