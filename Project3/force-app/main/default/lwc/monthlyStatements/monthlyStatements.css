@@ -1,0 +1,6 @@
+/* For the form icon */
+.custom-icon-color-form .slds-icon {
+    --slds-c-icon-color-foreground-default: #0F3045 !important;
+    --slds-c-icon-color-foreground: #0F3045 !important;
+    --slds-c-icon-color-background: #FFFFFF; 
+}

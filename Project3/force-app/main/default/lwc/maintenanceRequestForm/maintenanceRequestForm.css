@@ -19,3 +19,13 @@
   display: block;
   margin-top: 1rem;
 }
+
+/* For the form icon */
+.custom-icon-color-form {
+  --slds-c-icon-color-foreground-default: #0F3045; /* Replace with your desired color */
+}
+
+/* For the success icon */
+.custom-icon-color-success {
+  --slds-c-icon-color-foreground-default: #40A325; /* Replace with your desired color */
+}
