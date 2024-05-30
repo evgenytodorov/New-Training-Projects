@@ -29,3 +29,8 @@
 .custom-icon-color-success {
   --slds-c-icon-color-foreground-default: #40A325; /* Replace with your desired color */
 }
+
+.slds-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  /* Additional custom styles here */
+}
