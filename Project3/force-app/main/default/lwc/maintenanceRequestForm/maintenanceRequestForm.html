@@ -1,6 +1,7 @@
 <template>
+    <div class = "slds-card">
     <template lwc:if={showForm}>
-        <lightning-card title="Submit Maintenance Request" icon-name="utility:form" class="custom-icon-color-form">
+        <lightning-card title="Submit Maintenance Request" icon-name="utility:form" class="custom-icon-color-form slds-card">
             <div class="slds-p-around_medium">
                 <lightning-input label="Subject" value={subject} onchange={handleInputChange} data-id="subject"></lightning-input>
                 <lightning-textarea label="Description" value={description} onchange={handleInputChange} data-id="description"></lightning-textarea>
@@ -16,6 +17,7 @@
             </div>
         </lightning-card>
     </template>
+    </div>
 </template>
 
 
