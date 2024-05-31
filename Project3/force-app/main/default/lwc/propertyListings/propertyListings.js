@@ -7,8 +7,8 @@ export default class Home extends NavigationMixin(LightningElement) {
   properties;
 
   navToRentalPropertyPage(e) {
-    // the name Residence_Viewer__c needs to correspond with
-    // the api name of the page made in experience builder
+    // the name Unoccupied_Rental_Property__c needs to correspond
+    // with the api name of the page made in experience builder
     this[NavigationMixin.Navigate]({
       type: "comm__namedPage",
       attributes: {

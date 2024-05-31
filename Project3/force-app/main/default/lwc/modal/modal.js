@@ -118,3 +118,4 @@ export default class Modal extends LightningElement {
         });
     }
 }
+
