@@ -9,10 +9,9 @@ import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
 import PHONE_FIELD from '@salesforce/schema/Contact.Phone';
 import RENTAL_PROPERTY_FIELD from '@salesforce/schema/Contact.Rental_Property__c';
-import ACCOUNT_FIELD from '@salesforce/schema/Contact.AccountId';
 import isGuest from '@salesforce/user/isGuest';
 
-const USER_FIELDS = ['User.Contact.Rental_Property__c', 'User.Contact.AccountId'];
+const FIELDS = ['User.Contact.Rental_Property__c'];
 
 export default class AddFamilyMember extends LightningElement {
     @track firstName = '';
@@ -20,7 +19,6 @@ export default class AddFamilyMember extends LightningElement {
     @track email = '';
     @track phone = '';
     @track rentalProperty = '';
-    @track accountId = '';
     @track isFormVisible = true;
     @track isConfirmationVisible = false;
     isSubmitDisabled = false;
@@ -34,16 +32,17 @@ export default class AddFamilyMember extends LightningElement {
         return this.isConfirmationVisible && !this.isGuest;
     }
 
-    @wire(getRecord, { recordId: USER_ID, fields: USER_FIELDS })
+    @wire(getRecord, { recordId: USER_ID, fields: FIELDS })
     userRecord({ error, data }) {
         if (data) {
             console.log('User data:', data);
-            const contact = data.fields.Contact?.value;
-            if (contact) {
-                this.rentalProperty = contact.fields.Rental_Property__c?.value || '';
-                this.accountId = contact.fields.AccountId?.value || '';
+            const contact = data.fields.Contact.value;
+            if (contact && contact.fields && contact.fields.Rental_Property__c) {
+                this.rentalProperty = contact.fields.Rental_Property__c.value || '';
                 console.log('Retrieved Rental Property ID:', this.rentalProperty);
-                console.log('Retrieved Account ID:', this.accountId);
+            } else {
+                console.error('Rental Property ID not found in user data.');
+                this.showToast('Error', 'Rental Property ID not found in user data.', 'error');
             }
         } else if (error) {
             console.error('Error retrieving user record:', error);
@@ -78,7 +77,6 @@ export default class AddFamilyMember extends LightningElement {
         fields[EMAIL_FIELD.fieldApiName] = this.email;
         fields[PHONE_FIELD.fieldApiName] = this.phone;
         fields[RENTAL_PROPERTY_FIELD.fieldApiName] = this.rentalProperty;
-        fields[ACCOUNT_FIELD.fieldApiName] = this.accountId;
 
         console.log('Creating record with fields:', fields);
 
