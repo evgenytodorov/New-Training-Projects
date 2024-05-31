@@ -1,18 +1,38 @@
 .slds-p-around_medium {
     margin: 20px;
-}
-
-.lightning-input, .lightning-textarea, .lightning-combobox, .lightning-button {
+  }
+  
+  .lightning-input,
+  .lightning-textarea,
+  .lightning-combobox,
+  .lightning-button {
     margin-bottom: 1rem;
     width: 100%;
-}
-
-.lightning-card {
+  }
+  
+  .lightning-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
-}
-
-.lightning-button {
+  }
+  
+  .lightning-button {
     display: block;
     margin-top: 1rem;
-}
+  }
+  
+  /* For the form icon */
+  .custom-icon-color-form {
+    --slds-c-icon-color-foreground-default: #15616f; /* Replace with your desired color */
+  }
+  
+  /* For the success icon */
+  .custom-icon-color-success {
+    --slds-c-icon-color-foreground-default: #40A325; /* Replace with your desired color */
+  }
+  
+  .slds-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    min-height: 450px; /* Set a minimum height */
+    /* Additional custom styles here */
+  }
+  
