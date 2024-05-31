@@ -48,7 +48,7 @@ export default class Modal extends LightningElement {
             .then(() => {
                 setTimeout(() => {
                     this.closeModal();
-                }, 7000); // Delay for 2000 milliseconds (2 seconds)
+                }, 4000); // Delay for 2000 milliseconds (2 seconds)
             })
             .catch(error => {
                 console.error('Error creating lead:', error);
