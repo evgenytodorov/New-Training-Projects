@@ -15,8 +15,6 @@ public without sharing class MaintenanceRequestController {
                 WHERE Id = :contactId 
                 LIMIT 1
             ];
-            System.debug('Rental Property ID: ' + contact.Rental_Property__c);
-            System.debug('Rental Property Name: ' + contact.Rental_Property__r.Name);
             
             if (contact.Rental_Property__c == null) {
                 throw new AuraHandledException('Rental Property not found for the provided Contact ID.');
@@ -34,14 +32,8 @@ public without sharing class MaintenanceRequestController {
     }
 
     @AuraEnabled
-    public static void submitMaintenanceRequest(String subject, String description, String priority, Id contactId, Id rentalPropertyId) {
+    public static void submitMaintenanceRequest(String subject, String description, Id contactId, Id rentalPropertyId) {
         try {
-            System.debug('Subject: ' + subject);
-            System.debug('Description: ' + description);
-            System.debug('Priority: ' + priority);
-            System.debug('Contact ID: ' + contactId);
-            System.debug('Rental Property ID: ' + rentalPropertyId);
-            
             if (rentalPropertyId == null) {
                 throw new AuraHandledException('Rental Property ID cannot be null');
             }
@@ -49,7 +41,6 @@ public without sharing class MaintenanceRequestController {
             Case maintenanceRequest = new Case(
                 Subject = subject,
                 Description = description,
-                Priority = priority,
                 ContactId = contactId,
                 Rental_Property__c = rentalPropertyId
             );
