@@ -11,6 +11,7 @@
         <members>propertyDetail</members>
         <members>monthlyStatements</members>
         <members>hero</members>
+        <members>modal</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
