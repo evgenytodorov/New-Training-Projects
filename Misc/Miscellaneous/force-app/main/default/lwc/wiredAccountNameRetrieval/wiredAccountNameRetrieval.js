@@ -12,6 +12,7 @@ export default class wiredAccountNameRetrieval extends LightningElement {
     @track searchTerm = '';
     @track accounts;
     columns = COLUMNS;
+    delayTimeout;
 
     @wire(searchAccounts, { searchTerm: '$searchTerm' })
     wiredAccounts({ error, data }) {
@@ -24,6 +25,11 @@ export default class wiredAccountNameRetrieval extends LightningElement {
     }
 
     handleInputChange(event) {
-        this.searchTerm = event.target.value;
+        window.clearTimeout(this.delayTimeout);
+        const searchKey = event.target.value;
+        // Debounce input by 2000ms
+        this.delayTimeout = setTimeout(() => {
+            this.searchTerm = searchKey;
+        }, 2000);
     }
 }
