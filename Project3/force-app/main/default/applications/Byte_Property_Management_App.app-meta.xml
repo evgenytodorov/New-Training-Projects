@@ -16,12 +16,11 @@
     <label>Byte Property Management App</label>
     <navType>Standard</navType>
     <tabs>Rental_Property__c</tabs>
-    <tabs>Tour__c</tabs>
+    <tabs>standard-Lead</tabs>
     <tabs>standard-Case</tabs>
     <tabs>standard-Invoice</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-Account</tabs>
-    <tabs>standard-Lead</tabs>
     <tabs>Monthly_Statement__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Byte_Property_Management_App_UtilityBar</utilityBar>

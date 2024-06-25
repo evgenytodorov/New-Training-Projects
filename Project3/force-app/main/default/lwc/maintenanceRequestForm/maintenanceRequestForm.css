@@ -32,5 +32,6 @@
 
 .slds-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  min-height: 450px; /* Set a minimum height */
   /* Additional custom styles here */
 }
