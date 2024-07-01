@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Class_Delivery__c</members>
+        <members>Contact</members>
+        <name>CustomObject</name>
+    </types>
+    <type>
+        <members>Class_Delivery__c.Name</members>
+        <name>CustomField</name>
+    </type>
+    <version>60.0</version>
+</Package>
